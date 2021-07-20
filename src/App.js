@@ -1,4 +1,3 @@
-import './App.css';
 import {Notification, Section} from 'rbx'
 import "./App.scss"
 const App = () =>{
