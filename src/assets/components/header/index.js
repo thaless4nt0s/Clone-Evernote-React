@@ -1,12 +1,13 @@
 import React from 'react'
 import { Navbar, Container } from 'rbx'
 import LogoImage from "../../images/logo.png"
+import '../../../styles/header.scss'
 function Header() {
     return (
         <Navbar>
             <Container>
                 <Navbar.Brand>
-                    <img src={LogoImage} />
+                    <img alt="Logo" src={LogoImage} />
                     <Navbar.Burger
                         className="navbar-burger burger"
                         aria-label="menu"

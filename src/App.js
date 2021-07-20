@@ -2,14 +2,11 @@ import React, {Fragment} from 'react'
 import {Notification, Section} from 'rbx'
 import "./App.scss"
 
+import Header from "./assets/components/header"
 const App = () =>{
   return(
     <Fragment>
-      <Section>
-        <Notification color="success">
-          Javascript Notes
-        </Notification>
-      </Section>
+      <Header />
     </Fragment>
   )
 }
