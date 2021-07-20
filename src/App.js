@@ -1,12 +1,13 @@
 import React, {Fragment} from 'react'
 import {Notification, Section} from 'rbx'
 import "./App.scss"
+import HomeScreen from "./assets/screens/home"
 
-import Header from "./assets/components/header"
 const App = () =>{
   return(
     <Fragment>
-      <Header />
+      <HomeScreen/>
+      
     </Fragment>
   )
 }
