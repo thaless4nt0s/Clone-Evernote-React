@@ -1,10 +1,13 @@
 import './App.css';
-
+import {Notification, Section} from 'rbx'
+import "./App.scss"
 const App = () =>{
   return(
-    <p>
-      Javascript Notes
-    </p>
+    <Section>
+      <Notification>
+        Javascript Notes
+      </Notification>
+    </Section>
   )
 }
 
