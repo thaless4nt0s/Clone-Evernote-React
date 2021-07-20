@@ -4,7 +4,7 @@ import "./App.scss"
 const App = () =>{
   return(
     <Section>
-      <Notification>
+      <Notification color="success">
         Javascript Notes
       </Notification>
     </Section>
