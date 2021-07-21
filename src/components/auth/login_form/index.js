@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
-import { Button, Field, Control, Input, Column, Section, Help, Label } from "rbx";
+import { Button, Field, Control, Input, Column, Help, Label } from "rbx";
 import { Redirect } from "react-router-dom";
+import UsersService from '../../../services/users'
 
 function LoginForm() {
     const [email, setEmail] = useState("");
@@ -14,10 +15,20 @@ function LoginForm() {
     else if (redirectToNotes)
         return <Redirect to={{ pathname: "/notes" }} />
 
+    const HandleSubmit = async(event) =>{
+        event.preventDefault()
+        try{
+            const user = await UsersService.login({email: email, password: password})
+            setRedirectToNotes(true)
+        }catch(error){
+            setError(error)
+        }
+    }
+
     return (
         <Fragment>
             <Column.Group centered>
-                <form>
+                <form onSubmit={HandleSubmit}>
                     <Column size={12}>
                         <Field>
                             <Label size="small">Email:</Label>
