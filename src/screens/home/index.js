@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
-import PresentationImage from '../../images/presentation.png'
+import PresentationImage from '../../assets/images/presentation.png'
 import Header from '../../components/header'
 import { Column, Section, Title, Container } from 'rbx'
-import "../../../styles/home.scss"
+import "../../styles/home.scss"
 import {Link} from 'react-router-dom'
 
 function HomeScreen() {

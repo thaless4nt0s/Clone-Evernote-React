@@ -1,10 +1,10 @@
 import React from 'react'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import HomeScreen from "./assets/screens/home"
-import RegisterScreen from './assets/screens/auth/register'
-import LoginScreen from './assets/screens/auth/login'
-import NotesIndexScreen from './assets/screens/notes/index'
-import UserEditScreen from "./assets/screens/auth/users/edit"
+import HomeScreen from "./screens/home"
+import RegisterScreen from './screens/auth/register'
+import LoginScreen from './screens/auth/login'
+import NotesIndexScreen from './screens/notes/index'
+import UserEditScreen from "./screens/auth/users/edit"
 const Routes = () =>(
     <BrowserRouter>
         <Switch>
