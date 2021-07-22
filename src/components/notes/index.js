@@ -9,6 +9,11 @@ function Notes(props) {
     const [notes, setNotes] = useState([]);
     const [current_note, setCurrentNote] = useState({ title: "", body: "", id: "" });
 
+    const createNote = async ()=>{
+        await NoteService.create()
+        fetchNotes()    
+    }
+
     useEffect(() => {
         fetchNotes();
     }, []);
@@ -30,7 +35,7 @@ function Notes(props) {
 
     return (
         <Fragment>
-            <Column.Group className="notes" id="notes">
+            <div className="notes" id="notes">
                 <Menu
                     pageWrapId={"notes-editor"}
                     isOpen={props.isOpen}
@@ -40,19 +45,19 @@ function Notes(props) {
                     customBurgerIcon={false}
                     customCrossIcon={false}
                 >
-                    <Column.Group>
-                        <Column size={10} offset={1}>
-                            Search...
-                        </Column>
-                    </Column.Group>
-                    <p>List...</p>
+                    <List
+                        notes={notes}
+                        selectNote={selectNote}
+                        current_note={current_note}
+                        createNote={createNote}    
+                    />
                 </Menu>
 
 
                 <Column size={12} className="notes-editor" id="notes-editor">
                     Editor...
                 </Column>
-            </Column.Group>
+            </div>
         </Fragment>
     )
 }
