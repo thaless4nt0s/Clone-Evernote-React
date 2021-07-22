@@ -30,7 +30,7 @@ function Notes(props) {
 
     return (
         <Fragment>
-            <div className="notes" id="notes">
+            <Column.Group className="notes" id="notes">
                 <Menu
                     pageWrapId={"notes-editor"}
                     isOpen={props.isOpen}
@@ -40,17 +40,19 @@ function Notes(props) {
                     customBurgerIcon={false}
                     customCrossIcon={false}
                 >
-                    <List
-                        notes={notes}
-                        selectNote={selectNote}
-                        current_note={current_note} />
+                    <Column.Group>
+                        <Column size={10} offset={1}>
+                            Search...
+                        </Column>
+                    </Column.Group>
+                    <p>List...</p>
                 </Menu>
 
 
                 <Column size={12} className="notes-editor" id="notes-editor">
                     Editor...
                 </Column>
-            </div>
+            </Column.Group>
         </Fragment>
     )
 }
