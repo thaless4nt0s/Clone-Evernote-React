@@ -9,9 +9,14 @@ function Notes(props) {
     const [notes, setNotes] = useState([]);
     const [current_note, setCurrentNote] = useState({ title: "", body: "", id: "" });
 
-    const createNote = async ()=>{
+    const deleteNote = async (note) => {
+        await NoteService.delete(note._id)
+        fetchNotes()
+    }
+
+    const createNote = async () => {
         await NoteService.create()
-        fetchNotes()    
+        fetchNotes()
     }
 
     useEffect(() => {
@@ -49,7 +54,8 @@ function Notes(props) {
                         notes={notes}
                         selectNote={selectNote}
                         current_note={current_note}
-                        createNote={createNote}    
+                        createNote={createNote}
+                        deleteNote={deleteNote}
                     />
                 </Menu>
 
