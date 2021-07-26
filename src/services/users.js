@@ -18,11 +18,10 @@ const UserService = {
         localStorage.setItem('user', JSON.stringify(response.data));
     },
 
-    update: async (params) => {
-        const response = await Api.put("/users", params, {
+    updatePassword: async (params) => {
+        await Api.put("/users/password", params, {
             headers: { 'x-access-token': localStorage.getItem('token') }
         })
-        localStorage.setItem('user', JSON.stringify(response.data));
     },
 
     delete: async () => {

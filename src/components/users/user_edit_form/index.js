@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Button, Field, Control, Input, Column, Title, Help, Label } from "rbx";
-import UserService from '../../../services/user';
+import UserService from '../../../services/users';
 
 function UsersEditForm() {
     const [email, setEmail] = useState("");
