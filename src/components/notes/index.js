@@ -30,15 +30,7 @@ function Notes(props) {
         console.log(newNotes)
     }
 
-    /*
-const updateNote = async (oldNote, params) => {
-    const updatedNote = await NoteService.update(oldNote._id, params);
-    const index = notes.indexOf(oldNote);
-    const newNotes = notes;
-    newNotes[index] = updatedNote.data;
-    setNotes(newNotes);
-    setCurrentNote(updatedNote.data);
-} */
+
 
     const deleteNote = async (note) => {
         await NoteService.delete(note._id)
